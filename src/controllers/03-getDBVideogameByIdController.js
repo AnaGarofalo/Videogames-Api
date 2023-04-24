@@ -2,6 +2,8 @@ const { Videogame, Genre } = require("../db");
 
 const getDBVideogameByIdController = async (idGame) => {
   try {
+    //* busca el juego en la bdd según id y lo filtra a él y a los array que incluye
+    //* si no lo encuentra retorna false (catch)
     const dbVideogame = await Videogame.findByPk(idGame, {
       include: {
         model: Genre,

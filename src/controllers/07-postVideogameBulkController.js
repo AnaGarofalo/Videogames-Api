@@ -1,6 +1,7 @@
 const { Videogame } = require("../db");
 
 const postVideogameBulkController = async (videogames) => {
+  //* crea videojuegos y les asocia géneros, sólo se usa en la etapa de desarrollo
   const newGames = await Videogame.bulkCreate(videogames);
   newGames.forEach(async (game) => {
     await game.addGenres([

@@ -2,6 +2,7 @@ const { Op } = require("sequelize");
 const getApiVideogamesByNameController = require("../controllers/02-getApiVideogamesByNameController");
 const { Videogame } = require("../db");
 
+//* validaciones para crear videojuegos
 const validate = async (req, res, next) => {
   const {
     name,

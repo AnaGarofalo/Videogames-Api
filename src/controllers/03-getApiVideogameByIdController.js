@@ -3,6 +3,9 @@ require("dotenv").config();
 const { API_URL_BASE, API_KEY } = process.env;
 
 const getApiVideogameByIdController = async (idGame) => {
+  //* trae de la api el videojuego por id y lo filtra y a los array que incluye
+
+  //* si consigue el juego, lo retorna, sino retorna false (catch)
   try {
     const response = await axios.get(
       `${API_URL_BASE}/games/${idGame}?key=${API_KEY}`

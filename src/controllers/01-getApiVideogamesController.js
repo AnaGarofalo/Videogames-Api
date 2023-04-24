@@ -3,6 +3,8 @@ require("dotenv").config();
 const { API_URL_BASE, API_KEY } = process.env;
 
 const getApiVideogamesController = async () => {
+  //* implementé el método promises all para ahorrar tiempo de espera
+  //* primero creo el array de promesas y luego las junto todas las respuestas en un mismo array
   const promises = [];
   for (let i = 1; i < 11; i++) {
     promises.push(
@@ -17,12 +19,13 @@ const getApiVideogamesController = async () => {
     });
   });
 
+  //* filtro la data que viene de cada juego y de cada género asociado a él
   const finalVideogames = videogames.map(
-    ({ id, name, genres, background_image, rating }) => {
+    ({ id, name, genres, background_image }) => {
       const newGenres = genres.map((genre) => {
         return { id: genre.id, name: genre.name };
       });
-      const newGame = { id, name, background_image, rating, genres: newGenres };
+      const newGame = { id, name, background_image, genres: newGenres };
       return newGame;
     }
   );

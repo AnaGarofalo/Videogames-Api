@@ -1,5 +1,6 @@
-const { DataTypes, UUIDV4, UUIDV1, Sequelize } = require("sequelize");
+const { DataTypes } = require("sequelize");
 
+//* Definiendo la función que crea el modelo Genre
 module.exports = (sequelize) => {
   sequelize.define(
     "Genre",
