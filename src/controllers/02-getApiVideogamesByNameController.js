@@ -9,11 +9,18 @@ const getApiVideogamesByNameController = async (name) => {
   );
   const videogames = requestResults.data.results;
   const finalVideogames = videogames.map(
-    ({ id, name, genres, background_image }) => {
+    ({ id, name, genres, background_image, rating }) => {
       const newGenres = genres.map((genre) => {
         return { id: genre.id, name: genre.name };
       });
-      const newGame = { id, name, genres: newGenres, background_image };
+      const newGame = {
+        id,
+        name,
+        genres: newGenres,
+        background_image,
+        rating,
+        origin: "api",
+      };
       return newGame;
     }
   );

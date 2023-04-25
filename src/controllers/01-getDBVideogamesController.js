@@ -18,6 +18,8 @@ const getDBVideogamesController = async () => {
       name: game.name,
       genres: game.Genres,
       background_image: game.background_image,
+      rating: game.rating,
+      origin: "database",
     };
   });
   return newVideogames;

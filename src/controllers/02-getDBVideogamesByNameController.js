@@ -14,7 +14,14 @@ const getDBVideogamesByNameController = async (name) => {
   });
   const newVideogames = videogames.map(
     ({ id, name, background_image, rating, Genres }) => {
-      return { id, name, background_image, genres: Genres };
+      return {
+        id,
+        name,
+        background_image,
+        genres: Genres,
+        origin: "database",
+        rating,
+      };
     }
   );
   return newVideogames;

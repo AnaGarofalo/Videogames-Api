@@ -21,11 +21,18 @@ const getApiVideogamesController = async () => {
 
   //* filtro la data que viene de cada juego y de cada género asociado a él
   const finalVideogames = videogames.map(
-    ({ id, name, genres, background_image }) => {
+    ({ id, name, genres, background_image, rating }) => {
       const newGenres = genres.map((genre) => {
         return { id: genre.id, name: genre.name };
       });
-      const newGame = { id, name, background_image, genres: newGenres };
+      const newGame = {
+        id,
+        name,
+        background_image,
+        genres: newGenres,
+        rating,
+        origin: "api",
+      };
       return newGame;
     }
   );
