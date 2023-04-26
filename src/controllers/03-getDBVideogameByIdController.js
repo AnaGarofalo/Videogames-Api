@@ -23,6 +23,7 @@ const getDBVideogameByIdController = async (idGame) => {
       released: dbVideogame.released,
       rating: dbVideogame.rating,
       genres: dbVideogame.Genres.map((genre) => genre.name),
+      origin: "database",
     };
     return videogame;
   } catch (error) {

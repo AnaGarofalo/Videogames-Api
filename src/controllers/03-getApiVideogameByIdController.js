@@ -33,6 +33,7 @@ const getApiVideogameByIdController = async (idGame) => {
       released,
       rating,
       genres,
+      origin: "api",
     };
     return videogame;
   } catch (error) {

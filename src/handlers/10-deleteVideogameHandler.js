@@ -3,6 +3,7 @@ const deleteVideogameController = require("../controllers/10-deleteVideogameCont
 const deleteVideogameHandler = async (req, res) => {
   try {
     const { id } = req.params;
+    console.log(id);
     //* llama al controller que borra un videojuego de la bdd. Este devuelve un booleano que indica
     //* si el juego fue borrado o no
     const deleted = await deleteVideogameController(id);
