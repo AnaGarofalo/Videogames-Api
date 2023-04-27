@@ -38,6 +38,6 @@ videogamesRouter.post("/bulk", postVideogameBulkHandler);
 videogamesRouter.delete("/delete/:id", deleteVideogameHandler);
 
 //*EXTRA Ruta que modifica un videojuego
-videogamesRouter.put("/put/:id", putVideogameHandler);
+videogamesRouter.put("/put/:id", validate, putVideogameHandler);
 
 module.exports = videogamesRouter;
