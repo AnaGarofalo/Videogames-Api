@@ -15,4 +15,8 @@ router.use("/videogames", videogamesRouter);
 
 router.use("/genres", genresRouter);
 
+router.use("/*", (req, res) => {
+  res.send("not found");
+});
+
 module.exports = router;
