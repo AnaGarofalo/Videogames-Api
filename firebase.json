@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "Videogames-Api",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
